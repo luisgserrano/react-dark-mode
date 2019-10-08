@@ -4,7 +4,7 @@
   "description": "A react library to provide dark mode to the users and a easy way to handle changes for developers.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "parcel public/index.html"
   },
   "keywords": [
     "react",
@@ -15,5 +15,9 @@
   "dependencies": {
     "react": "^16.10.2",
     "react-dom": "^16.10.2"
+  },
+  "devDependencies": {
+    "parcel": "^1.12.4",
+    "sass": "^1.23.0"
   }
 }
