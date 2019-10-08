@@ -6,8 +6,17 @@ export function setDarkModeCookieValue(value) {
 export function getDarkModeCookieValue() {
   let value;
   if (typeof document !== 'undefined') {
-    if (document.cookie.split(';').filter(item => item.indexOf('dark=true') >= 0).length) {
-      value = 'dark';
+    const cookies = document.cookie.split(';');
+    const filteredCookies = cookies.filter(cookie => cookie.indexOf('dark=') >= 0);
+
+    if (filteredCookies.length) {
+      value =
+        filteredCookies[0].substring(
+          filteredCookies[0].indexOf('true'),
+          filteredCookies[0].length
+        ) === 'true'
+          ? 'dark'
+          : 'light';
     }
   }
 
