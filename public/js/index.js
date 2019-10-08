@@ -17,7 +17,7 @@ const Test = () => {
     <>
       <Inner />
       <br />
-      <button type="button" onClick={() => toggleMode()}>
+      <button type="button" onClick={toggleMode}>
         Toggle
       </button>
     </>
