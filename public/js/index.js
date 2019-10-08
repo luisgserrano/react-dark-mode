@@ -1,18 +1,21 @@
 import React, { useContext } from 'react';
 import ReactDOM from 'react-dom';
 
+// Components
+import Inner from './inner';
+
 // Darkmode provider
-import Provider, { darkmodeContext } from '../Provider';
+import Provider, { darkmodeContext } from '../../src/Provider';
 
 // style
-import './style.scss';
+import '../style/main.scss';
 
 const Test = () => {
-  const { mode, toggleMode } = useContext(darkmodeContext);
+  const { toggleMode } = useContext(darkmodeContext);
 
   return (
     <>
-      {mode}
+      <Inner />
       <br />
       <button type="button" onClick={() => toggleMode()}>
         Toggle
