@@ -6,7 +6,7 @@ state and methods to toggle the dark mode theme and react on that chage.
 ## Installation
 
 ```shell
-npm install react-dark-mode --save
+npm install react-use-dark-mode --save
 ```
 
 ## Documentation and Examples
@@ -23,7 +23,7 @@ value or the `toggleMode` function in any child component.
 I recommend using `React 16.8.0` at least so you can use hooks! 😌
 
 ```javascript
-import Provider, { darkmodeContext } from 'react-dark-mode';
+import Provider, { darkmodeContext } from 'react-use-dark-mode';
 
 const Test = () => {
   const { mode, toggleMode } = useContext(darkmodeContext);
