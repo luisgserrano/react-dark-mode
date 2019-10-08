@@ -13,8 +13,8 @@ npm install react-dark-mode --save
 
 ### Provider and context object
 
-We give access to the context object so you can react to the change of the theme.
-The only necessary thing you should do is add the provider component. The reason is because I've
+I give you access to the context object so you can react to the change of the theme.
+The only necessary thing you should do is adding the provider component. The reason is because I've
 abstracted the context Provider inital value definition.
 
 ```javascript
