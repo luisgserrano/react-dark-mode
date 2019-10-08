@@ -1,6 +1,6 @@
 {
   "name": "react-use-dark-mode",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A react library to provide dark mode to the users and a easy way to handle changes for developers.",
   "source": "src/Provider.js",
   "main": "build/react-use-dark-mode.js",
