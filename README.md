@@ -1,7 +1,7 @@
 # React dark mode
 
-React dark mode is a solution so you can integrate dark mode in your application. It gives you access to the necessary
-state and methods to toggle the dark mode theme and react on that chage.
+React dark mode is a solution for you to integrate dark mode in your application.
+Behind the scenes, it's based on the React `context API` so you can have access to the dark mode theme state and the toggle function in any component.
 
 ## Installation
 
@@ -11,41 +11,87 @@ npm install react-use-dark-mode --save
 
 ## Documentation and Examples
 
-### Provider and context object
+### How it works
 
-I give you access to the context object so you can react to the change of the theme.
-The only necessary thing you should do is adding the provider component. The reason is because I've
-abstracted the context Provider inital value definition.
+By using the `context API` from React in `react-use-dark-mode`, you'll be able to access the theme state and the toggle function to change the current theme in any component you need.
 
-Like this, you can add the `<Provider>` component to your top level component and access the theme state
-value or the `toggleMode` function in any child component.
+To use the context state and methods in your components, you need to add our `Provider` component around your top level component or any component, just remember that you'll only have access to the context on components that are children of our `Provider` component.
 
-I recommend using `React 16.8.0` at least so you can use hooks! 😌
+This `Provider` component creates the state and the toggle function for you and the necessary logic to update the state and finally, adds the context provider component around his children so that any component below the tree can subscribe to context changes.
+
+To help you out with styling your app, we detect if the user has requested the system use a light or dark color theme (by using the `prefers-color-scheme` CSS media feature) and set this theme as a class of the `body` tag like `<body class="dark">`.
+
+By having this, you can create different styles when the body tag as the css class `dark` or `light`.
+
+### Examples
+
+If you're using `React 16.8.0`, you can use hooks like in these examples! 😌
+
+Imagine that you have an `Header` component that should render a different logo based on the darkmode theme and have a button that should toggle the darkmode theme.
 
 ```javascript
 import Provider, { darkmodeContext } from 'react-use-dark-mode';
 
-const Test = () => {
+// Images
+import BlackLogo from './blackLogo.svg';
+import WhiteLogo from './WhiteLogo.svg';
+
+const Header = () => {
   const { mode, toggleMode } = useContext(darkmodeContext);
 
+  function getLogo(theme) {
+    return theme === "light" ? BlackLogo : WhiteLogo;
+  }
+
   return (
-    <>
-      I'm a component and I react to the theme change. I'm {mode}.
-      <br />
-      <button type="button" onClick={toggleMode}>
-        Toggle
-      </button>
-    </>
+    <header>
+      <img src={getLogo(mode)} alt="Logo" />
+      <button type="button" onClick={toggleMode}>Toggle darkmode</button>
+    </header>
   );
 };
 
 ReactDOM.render(
   <Provider>
-    <Test />
+    <Header />
   </Provider>,
-  document.getElementById('test')
+  document.getElementById('header')
 );
 ```
 
-## Missing (TODO)
-- Tests
+Then, if you're using css variables or just regular sass you could change the theme of your website.
+
+```scss
+body {
+  background-color: white;
+  color: black;
+
+  &.dark {
+    color: white;
+    background-color: black;
+  }
+}
+```
+
+or with css variables,
+
+```css
+:root {
+  --textPrimaryColor: #000;
+  --backgroundPrimaryColor: #fff;
+}
+
+body {
+  color: var(--textPrimaryColor);
+  background-color: var(--backgroundPrimaryColor);
+}
+
+body.dark {
+  --textPrimaryColor: #fff;
+  --backgroundPrimaryColor: #000;
+}
+
+.block__element {
+  color: var(--textPrimaryColor);
+}
+```
