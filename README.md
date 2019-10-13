@@ -19,6 +19,8 @@ To use the context state and methods in your components, you need to add our `Pr
 
 This `Provider` component creates the state and the toggle function for you and the necessary logic to update the state and finally, adds the context provider component around his children so that any component below the tree can subscribe to context changes.
 
+This context exposes the `mode` variable, which is the theme that can be `light` or `dark` and the `toggleMode` function which toggles the theme. When the mode changes, the subscribed component will re-render.
+
 To help you out with styling your app, we detect if the user has requested the system use a light or dark color theme (by using the `prefers-color-scheme` CSS media feature) and set this theme as a class of the `body` tag like `<body class="dark">`.
 
 By having this, you can create different styles when the body tag as the css class `dark` or `light`.
