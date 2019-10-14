@@ -5,13 +5,13 @@ import ReactDOM from 'react-dom';
 import Inner from './inner';
 
 // Darkmode provider
-import Provider, { darkmodeContext } from '../../src/Provider';
+import Provider, { useDarkmodeContext } from '../../src/Provider';
 
 // style
 import '../style/main.scss';
 
 const Test = () => {
-  const { toggleMode } = useContext(darkmodeContext);
+  const { toggleMode } = useDarkmodeContext();
 
   return (
     <>

@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 
 // Darkmode provider
-import { darkmodeContext } from '../../src/Provider';
+import { useDarkmodeContext } from '../../src/Provider';
 
 const InnerTest = () => {
-  const { mode } = useContext(darkmodeContext);
+  const { mode } = useDarkmodeContext();
 
   return <>I'm an inner component and I react to the theme change. I'm {mode}.</>;
 };
