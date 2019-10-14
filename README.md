@@ -32,23 +32,25 @@ If you're using `React 16.8.0`, you can use hooks like in these examples! 😌
 Imagine that you have an `Header` component that should render a different logo based on the darkmode theme and have a button that should toggle the darkmode theme.
 
 ```javascript
-import Provider, { darkmodeContext } from 'react-use-dark-mode';
+import Provider, { useDarkmodeContext } from 'react-use-dark-mode';
 
 // Images
 import BlackLogo from './blackLogo.svg';
 import WhiteLogo from './WhiteLogo.svg';
 
 const Header = () => {
-  const { mode, toggleMode } = useContext(darkmodeContext);
+  const { mode, toggleMode } = useDarkmodeContext();
 
   function getLogo(theme) {
-    return theme === "light" ? BlackLogo : WhiteLogo;
+    return theme === 'light' ? BlackLogo : WhiteLogo;
   }
 
   return (
     <header>
       <img src={getLogo(mode)} alt="Logo" />
-      <button type="button" onClick={toggleMode}>Toggle darkmode</button>
+      <button type="button" onClick={toggleMode}>
+        Toggle darkmode
+      </button>
     </header>
   );
 };
