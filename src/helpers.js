@@ -1,6 +1,6 @@
 export function setDarkModeCookieValue(value) {
   document.cookie = `dark=${value}; max-age=31536000; path=/`;
-  document.cookie = `dark=${value}; max-age=31536000; domain=remote.com; path=/`;
+  document.cookie = `dark=${value}; max-age=31536000; domain=${document.location.pathname}; path=/`;
 }
 
 export function getDarkModeCookieValue() {
