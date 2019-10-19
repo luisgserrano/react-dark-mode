@@ -1,6 +1,6 @@
 {
   "name": "react-use-dark-mode",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A react library to provide dark mode to websites and an easy way for developers to implement.",
   "homepage": "https://github.com/luisgserrano/react-dark-mode",
   "repository": "https://github.com/luisgserrano/react-dark-mode",
