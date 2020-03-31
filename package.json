@@ -18,17 +18,17 @@
   "author": "Luis Serrano",
   "license": "MIT",
   "dependencies": {
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.7.5",
-    "@babel/plugin-transform-react-jsx": "^7.7.4",
-    "@babel/preset-env": "^7.7.6",
-    "babel-loader": "^8.0.6",
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-transform-react-jsx": "^7.9.4",
+    "@babel/preset-env": "^7.9.0",
+    "babel-loader": "^8.1.0",
     "parcel": "^1.12.4",
-    "sass": "^1.23.7",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10"
+    "sass": "^1.26.3",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11"
   }
 }
